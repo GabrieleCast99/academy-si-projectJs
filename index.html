@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Chiamate REST</title>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body>
+
+     <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" style="font-size: 2.5em;">Gestionale Dati Utente</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Login</a>
+            </div>
+        </div>
+    </nav>
+
+
+     <!-- Bottone per recuperare singolo utente -->
+     <div class="container text-center">
+        <h2 class="my-4">Recupero singolo Utente</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <input type="text" class="form-control mb-2" id="emailInput" placeholder="Inserisci l'email">
+                <button id="getUserByEmailButton" class="btn btn-primary btn-block">Trova Utente</button>
+            </div>
+     </div>
+           <div id="userSingol" class="mt-4 p-3 bg-light rounded">
+     </div>
+     
+    
+
+     <!-- Bottone per recuperare tutti gli utenti -->
+     <h2 class="my-4">Recupero Tutti gli Utenti</h2>
+     <div class="row justify-content-center">
+         <div class="col-md-6">
+             <button onclick="getAllUtenti()" class="btn btn-primary btn-block">Recupera Tutti gli Utenti</button>
+         </div>
+     </div>
+ 
+     <ul id="userList"></ul>
+ 
+
+
+     <!-- Bottone creazione nuovo utente -->
+     <div class="container text-center">
+        <h2 class="my-4">Creazione Nuovo Utente</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <input type="text" class="form-control mb-2" id="nomeInput" placeholder="Nome">
+                <input type="text" class="form-control mb-2" id="cognomeInput" placeholder="Cognome">
+                <input type="text" class="form-control mb-2" id="emailInput2" placeholder="Email">
+                <input type="password" class="form-control mb-2" id="passwordInput" placeholder="Password">
+                <button onclick="creaUtente()" class="btn btn-primary btn-block">Crea Utente</button>
+            </div>
+        </div>
+        <div id="message" class="mt-4"></div>
+     </div>
+    
+
+
+ <!-- Bottone per l'aggiornamento di un utente esistente, Non funzionante  -->
+<div class="container text-center">
+    <h2 class="my-4">Aggiornamento Dati Utente</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <input type="text" class="form-control mb-2" id="emailInputUpdate" placeholder="Email esistente dell'utente">
+            <input type="text" class="form-control mb-2" id="nomeInputUpdate" placeholder="Nuovo Nome">
+            <input type="text" class="form-control mb-2" id="cognomeInputUpdate" placeholder="Nuovo Cognome">
+            <input type="text" class="form-control mb-2" id="ruoloInput" placeholder="ID Ruolo">
+            <button class="btn btn-primary btn-block" onclick="updateUser()">Aggiorna Utente</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+    <!-- Script JavaScript esterno -->
+    <script src="script.js"></script>
+</body>
+</html>
